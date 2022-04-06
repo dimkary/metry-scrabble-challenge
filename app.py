@@ -71,10 +71,8 @@ async def root(request: Request):
     )
 
 
-@app.post("/play/")
-async def play(
-    play: Play, response_class=HTMLResponse, status_code=status.HTTP_202_ACCEPTED
-):
+@app.post("/play/", response_class=HTMLResponse, status_code=status.HTTP_202_ACCEPTED)
+async def play(play: Play):
     global CURRENT_STATE
     validatePlayer(CURRENT_STATE, play)
     CURRENT_STATE = playTurn(CURRENT_STATE, play, POINTS)
