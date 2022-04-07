@@ -1,4 +1,3 @@
-<!-- PROJECT LOGO -->
 <br />
 <div align="center">
   <a>
@@ -55,15 +54,15 @@ Since FastAPI depends on all of the non standard libraries, the only prerequisit
 
 To have the server running one needs to:
 
-2. Clone the repo
+1. Clone the repo
    ```sh
    git clone https://github.com/dimkary/metry-scrabble-challenge.git
    ```
-3. Go to root directory
+2. Go to root directory
    ```sh
    cd metry-scrabble-challenge
    ```
-4. Run the server locally using debug and reload mode (both optional)
+3. Run the server locally using debug and reload mode (both optional)
    ```sh
    uvicorn app:app --reload --debug
    ```
