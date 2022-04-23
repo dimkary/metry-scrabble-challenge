@@ -108,7 +108,7 @@ The backend units are programmed in a way to handle a plethora of invalid reques
 
 ## Final thoughts
 
-The project is far from complete, and further testing + security features should be implemented. While the code contains many assertions, a thorough pen test would be required to ensure the robsutness of the app. Moreover a next step would be to containerize it.
+The project is far from complete, and further testing + security features should be implemented. While the code contains many assertions, a thorough pen test would be required to ensure the robsutness of the app. ~~Moreover a next step would be to containerize it.~~
 ## Contact
 
 Your Name - Dimitrios Karypidis - dim.karypidis@outlook.com
