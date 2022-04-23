@@ -41,10 +41,9 @@ All the stack is based on Python libraries, for handling the HTTP requests, the 
 * [Jinja2](https://palletsprojects.com/p/jinja/)
 
 ## Getting Started
-
-
-### Prerequisites
-
+#
+### Normal installation
+#
 Since FastAPI depends on all of the non standard libraries, the only prerequisite in order to prepare the development environement is the following:
 
   ```sh
@@ -55,20 +54,36 @@ Since FastAPI depends on all of the non standard libraries, the only prerequisit
 
 To have the server running one needs to:
 
-2. Clone the repo
+1. Clone the repo
    ```sh
    git clone https://github.com/dimkary/metry-scrabble-challenge.git
    ```
-3. Go to root directory
+2. Go to root directory
    ```sh
    cd metry-scrabble-challenge
    ```
-4. Run the server locally using debug and reload mode (both optional)
+3. Run the server locally using debug and reload mode (both optional)
    ```sh
    uvicorn app:app --reload --debug
    ```
    Where *app* is the variable reference of the FastAPI instance, declared in the `app.py` file.
 
+#
+### Docker installation
+#
+The API is also served as a container.
+
+**NOTE:** The database is packed inside the image and is not persistent after killing the container
+
+1. Build the image from the Dockerfile
+   ```
+   docker build -t app_image .
+   ```
+
+2. Run the container
+   ```
+   docker run -d --name app_container -p 8000:8000 app_image
+   ```
 ## Usage
 
 The root URL of the server is http://127.0.0.1:8000/. Apart from the root, two endpoints have been set-up:
