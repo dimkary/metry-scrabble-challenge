@@ -40,7 +40,7 @@ All the stack is based on Python libraries, for handling the HTTP requests, the 
 * [Jinja2](https://palletsprojects.com/p/jinja/)
 
 ## Getting Started
-#
+
 ### Normal installation
 #
 Since FastAPI depends on all of the non standard libraries, the only prerequisite in order to prepare the development environement is the following:
