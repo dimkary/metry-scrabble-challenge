@@ -22,13 +22,11 @@ def populateBoard(body):
 
 
 def dealLetters(body):
-    # print("Hi from dealer")
     remaining = body["remaining"]
     _remaining = []
     player = body["player_turn"]
     p1_letters = body["p1"]
     p2_letters = body["p2"]
-    # print("START IS: PLAYER " + player)
     assert len(p1_letters) <= 7 and len(p2_letters) <= 7
 
     for letter in remaining:
@@ -37,7 +35,6 @@ def dealLetters(body):
             for _ in range(amount):
                 _remaining.append(letter)
 
-    # print("Remaining before\n", remaining)
     random.shuffle(_remaining)
 
     if len(p1_letters) == len(p2_letters) == 0:
@@ -62,7 +59,6 @@ def dealLetters(body):
 
         body["p1"] = p1_letters
         body["player_turn"] = "p2"
-        # print("WHY NOT CHANGING :", body["player_turn"])
 
     elif player == "p2":
         assert len(p1_letters) <= 7 and len(p2_letters) <= 7
@@ -76,8 +72,6 @@ def dealLetters(body):
         body["player_turn"] = "p1"
     else:
         raise Exception("Invalid player letters")
-
-    # print("END IS: PLAYER " + body["player_turn"])
 
     with open("current_state.json", "w") as f:
         json.dump(body, f)
@@ -213,7 +207,6 @@ def playTurn(body, playload, points):
         assert sorted(available_letters_plus) != sorted(available_letters)
     except:
         raise HTTPException(status_code=406, detail="Player has not added any word")
-    # print(board)
     # construct the body chaning ONLY the count and the used letters
     body["{}_score".format(player)] = score
     body[player] = available_letters_plus
